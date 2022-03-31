@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dona Donuts</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- header section -->
+
+    <header>
+        <a href="#" class="logo">Dona.</a>
+
+        <nav class="navbar">
+            <a class="active" href="#home">home</a>
+            <a href="#menu">menu</a>
+            <a href="#order">order</a>
+        </nav>
+
+        <div class="icons">
+          
+        </div>
+
+    </header>
+
+
+    <!-- home section -->
+
+    <section class="home" id="home">
+
+        <div class="row">
+
+            <div id="content">
+                <div id="cir1">           
+                </div>
+            </div>
+
+
+            <div class="content">
+                <h3>Welcome to the best donuts</h3>
+                    <p>Home made donuts with the best and fresh ingredients!</p>
+                    <p>Order now.</p>
+            </div>
+
+        </div>
+    </section>
+    
+
+    <!-- menu section  -->
+
+    <section class="menu" id="menu">
+
+        <h3 class="heading"> Menu </h3>
+        <h1 class="sub-heading"> Donuts </h1>
+
+        <div class="box-container">
+            <div class="box">
+                <div class="image">
+                    <img src="images/choc.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Chocolate Donuts</h3>
+                    <p>Ingredients</p>
+                    <a href="#order" class="btn">order now</a>
+                    <span class="price">$4.99</span>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/choco-sprin.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Chocolate sprinkle Donuts</h3>
+                    <p>Ingredients</p>
+                    <a href="#order" class="btn">order now</a>
+                    <span class="price">$5.49</span>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/straw.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Strawberry Donuts</h3>
+                    <p>Ingredients</p>
+                    <a href="#order" class="btn">order now</a>
+                    <span class="price">$4.99</span>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/straw-spr.jpg" alt="">
+                </div>
+
+                <div class="content">
+                    <h3>Strawberry sprinkle Donuts</h3>
+                    <p>Ingredients.</p>
+                    <a href="#order" class="btn">order now</a>
+                    <span class="price">$5.49</span>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/vanil.jpg" alt="">
+                </div>
+                <div class="content">
+
+                    <h3>Vanilla Donuts</h3>
+                    <p>Ingredients : a, b, c.</p>
+                    <a href="#order" class="btn">order now</a>
+                    <span class="price">$4.99</span>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/van-spr.jpg" alt="">
+                </div>
+                <div class="content">
+
+                    <h3>Vanilla sprinkle Donuts</h3>
+                    <p>Ingredients: a b, c, d</p>
+                    <a href="#order" class="btn">order now</a>
+                    <span class="price">$5.49</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- order section starts  -->
+    <section class="order" id="order">
+
+        <h1 class="heading"> Order </h1>
+        <h1 class="sub-heading"> Same day order, ready after one hour. </h1>
+
+        <form action="">
+            <div class="inputBox">
+                <div class="input">
+                    <span>Name :</span>
+                    <input type="text" placeholder="enter your name">
+                </div>
+                <div class="input">
+                    <span>Phone :</span>
+                    <input type="text" placeholder="enter your phone number">
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>Your order</span>
+                    <select name="don" id="dons" multiple required>
+                        <option value="Chocolate Donuts">Chocolate Donuts</option>
+                        <option value="Chocolate Sprinkle Donuts">Chocolate Sprinkle Donuts</option>
+                        <option value="Strawberry Donuts">Strawberry Donuts</option>
+                        <option value="Strawberry Sprinkle Donuts">Strawberry Donuts</option>
+                        <option value="Vanilla Donuts">Vanilla Donuts</option>
+                        <option value="Vanilla Sprinkle Donuts">Vanilla Sprinkle Donuts</option>
+                    </select>
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>Quantity</span>
+                    <input type="number" min="1" placeholder="how many orders" height="100%">
+                </div>
+                <div class="input">
+                    <span>date for the order. </span>
+                    <input type="date">
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>Special instructions</span>
+                    <textarea name="" placeholder="enter your message" id=""></textarea>
+                </div>
+            </div>
+
+            <input type="submit" value="order now" class="btn">
+
+        </form>
+
+    </section>
+
+  
+
+    <!-- footer section   -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>go to</h3>
+                <a href="#">home</a>
+                <a href="#">menu</a>
+                <a href="#">order</a>
+            </div>
+
+            <div class="box">
+                <h3>contact us</h3>
+                <a href="#">+123-456-7890</a>
+                <a href="#">dona@dona.com</a>
+                <a href="#">Edgewwod, KY - 41000</a>
+            </div>
+
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="#">facebook</a>
+                <a href="#">instagram</a>
+                <a href="#">snapchat</a>
+            </div>
+
+        </div>
+
+        <div>
+            <p><small>&copy;2022 Dona. Donuts - All right reserved</small></p>
+        </div>
+    </section>
+
+</body>
+
+</html>
