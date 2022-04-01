@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dona Donuts</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
 
 </head>
 
@@ -16,20 +17,32 @@
 
     <header>
         <a href="#" class="logo">Dona.</a>
-
-        <nav class="navbar">
-            <a class="active" href="#home">home</a>
-            <a href="#menu">menu</a>
-            <a href="#order">order</a>
+        
+        <nav class="navbar"  id="navb">  
+            
+            <ul>
+                <li><a class="active" href="#home">home</a></li>
+                <li><a href="#menu">menu</a></li>
+                <li><a href="#order">order</a></li>
+            </ul>
         </nav>
 
-        <div class="icons">
+        <div class="toggle-btn" onclick="myFunction2();">
+            <span></span>
+            <span></span>
+            <span></span>
           
         </div>
 
     </header>
 
-
+    <script type="text/javascript">
+        function myFunction2(){
+            var navbar1 = document.getElementById('navb');
+            navbar1.classList.toggle('show');
+        }
+    
+    </script>
     <!-- home section -->
 
     <section class="home" id="home">
@@ -37,20 +50,18 @@
         <div class="row">
 
             <div id="content">
-                <div id="cir1">           
+                <div id="cir1">
                 </div>
             </div>
 
-
             <div class="content">
-                <h3>Welcome to the best donuts</h3>
-                    <p>Home made donuts with the best and fresh ingredients!</p>
-                    <p>Order now.</p>
+                <h1>Welcome to the best donuts</h1>
+                <h2>Home made donuts with fresh ingredients!</h2>
+                <p>.</p>
             </div>
-
         </div>
     </section>
-    
+
 
     <!-- menu section  -->
 
@@ -143,20 +154,30 @@
         <h1 class="heading"> Order </h1>
         <h1 class="sub-heading"> Same day order, ready after one hour. </h1>
 
-        <form action="">
+        <form name="myForm" action="">
+            <h3 class="sub-heading" id="thanks"></h3>
             <div class="inputBox">
                 <div class="input">
                     <span>Name :</span>
-                    <input type="text" placeholder="enter your name">
+                    <input type="text" required placeholder="enter your name">
                 </div>
                 <div class="input">
                     <span>Phone :</span>
-                    <input type="text" placeholder="enter your phone number">
+                    <input type="text" required placeholder="enter your phone number">
                 </div>
-            </div>
-            <div class="inputBox">
+
                 <div class="input">
-                    <span>Your order</span>
+                    <span>Email :</span>
+                    <input type="text" required placeholder="enter your email">
+                </div>
+
+                <div class="input">
+                    <span>Date for the order : </span>
+                    <input type="date" required>
+                </div>
+
+                <div class="input">
+                    <span>Your order :</span>
                     <select name="don" id="dons" multiple required>
                         <option value="Chocolate Donuts">Chocolate Donuts</option>
                         <option value="Chocolate Sprinkle Donuts">Chocolate Sprinkle Donuts</option>
@@ -166,61 +187,96 @@
                         <option value="Vanilla Sprinkle Donuts">Vanilla Sprinkle Donuts</option>
                     </select>
                 </div>
-            </div>
-            <div class="inputBox">
+
                 <div class="input">
-                    <span>Quantity</span>
-                    <input type="number" min="1" placeholder="how many orders" height="100%">
+                    <span>Quantity :</span>
+                    <input type="number" min="1" value="1" required placeholder="how many orders" height="100%">
                 </div>
+
                 <div class="input">
-                    <span>date for the order. </span>
-                    <input type="date">
-                </div>
-            </div>
-            <div class="inputBox">
-                <div class="input">
-                    <span>Special instructions</span>
+                    <span>Special instructions :</span>
                     <textarea name="" placeholder="enter your message" id=""></textarea>
                 </div>
             </div>
 
-            <input type="submit" value="order now" class="btn">
+            <input type="submit" value="Order now" onclick=myFun(this.parentElement) class="btn">
+        </form>    
 
-        </form>
+    <script>
+        var name1 = "";
+        var email1 = "";
+
+        function getName(form){
+            name1 = form[0].value;
+            return form[0].value;
+        }
+
+        function getEmail(form){
+            email1 = form[2].value;
+            return form[2].value;
+        }
+    
+        function myFun(form){
+           var inputText= getName(form);
+           var inputText2= getEmail(form);
+           
+            var correctmail = ValidateEmail(form[2]);
+            if(correctmail){
+                    document.getElementById("thanks").innerHTML = getAction();
+                    
+            }
+            else {  
+                    alert("Please correct your email");
+            }
+        }
+        
+        function ValidateEmail(mail) {
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            return mail.value.match(mailformat);
+        }
+    
+        function getAction(){
+            let message = "Thank you " + name1 + ". An email was sent to : " + email1;
+            return message;
+        }
+    </script>
+
 
     </section>
-
-  
 
     <!-- footer section   -->
 
     <section class="footer">
+        <button type="button" class="collapse" onclick=collapseFooter()>
+            Collapsible footer
+        </button>
 
-        <div class="box-container">
+        <div class="text1">
+            <div class="box-container">
 
-            <div class="box">
-                <h3>go to</h3>
-                <a href="#">home</a>
-                <a href="#">menu</a>
-                <a href="#">order</a>
+                <div class="box">
+                    <h3>go to</h3>
+                    <a href="#">home</a>
+                    <a href="#">menu</a>
+                    <a href="#">order</a>
+                </div>
+
+                <div class="box">
+                    <h3>contact us</h3>
+                    <a href="#">+123-456-7890</a>
+                    <a href="#">dona@dona.com</a>
+                    <a href="#">Edgewwod, KY - 41000</a>
+                </div>
+
+                <div class="box">
+                    <h3>follow us</h3>
+                    <a href="#">facebook</a>
+                    <a href="#">instagram</a>
+                    <a href="#">snapchat</a>
+                </div>
             </div>
-
-            <div class="box">
-                <h3>contact us</h3>
-                <a href="#">+123-456-7890</a>
-                <a href="#">dona@dona.com</a>
-                <a href="#">Edgewwod, KY - 41000</a>
-            </div>
-
-            <div class="box">
-                <h3>follow us</h3>
-                <a href="#">facebook</a>
-                <a href="#">instagram</a>
-                <a href="#">snapchat</a>
-            </div>
-
         </div>
-
+        
         <div>
             <p><small>&copy;2022 Dona. Donuts - All right reserved</small></p>
         </div>
