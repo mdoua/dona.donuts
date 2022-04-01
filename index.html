@@ -205,6 +205,8 @@
     <script>
         var name1 = "";
         var email1 = "";
+        const c1 = "Thank you " ;
+        const c2 = ". An email was sent to : ";
 
         function getName(form){
             name1 = form[0].value;
@@ -236,7 +238,7 @@
         }
     
         function getAction(){
-            let message = "Thank you " + name1 + ". An email was sent to : " + email1;
+            let message = c1 + name1 + c2 + email1;
             return message;
         }
     </script>
